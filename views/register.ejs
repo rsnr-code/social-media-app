@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+</head>
+<body>
+    <form action="/signup" method="POST">
+        <input type="name" name="userName" placeholder="User Name" value="<%= typeof name != 'undefined' ? name : '' %>">
+        <input type="email" name="email" placeholder="Email" value="<%= typeof email != 'undefined' ? email : '' %>">
+        <input type="password" name="password" placeholder="Password" value="<%= typeof email != 'undefined' ? password: '' %>">
+        <input type="password" name="confirmPassword" placeholder="Confirm Password" value="<%= typeof email != 'undefined' ? password2 : '' %>">
+        <input type="submit">
+    </form>
+    <p><a href="/users/login">Have an account?</a></p>
+</body>
+</html>
