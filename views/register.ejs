@@ -7,11 +7,23 @@
     <title>Register</title>
 </head>
 <body>
-    <form action="/signup" method="POST">
-        <input type="name" name="userName" placeholder="User Name" value="<%= typeof name != 'undefined' ? name : '' %>">
-        <input type="email" name="email" placeholder="Email" value="<%= typeof email != 'undefined' ? email : '' %>">
-        <input type="password" name="password" placeholder="Password" value="<%= typeof email != 'undefined' ? password: '' %>">
-        <input type="password" name="confirmPassword" placeholder="Confirm Password" value="<%= typeof email != 'undefined' ? password2 : '' %>">
+
+    <form action="/users/register" method="POST">
+        <h1>Register</h1>
+        <% if (typeof errors != 'undefined') { %>
+            <% errors.forEach(function(error) { %>
+                <%= error.msg %>
+            <% }); %>
+        <% } %>
+
+        <input type="name" name="userName" placeholder="User Name">
+       
+        <input type="email" name="email" placeholder="Email" >
+        
+        <input type="password" name="password" placeholder="Password" >
+        
+        <input type="password" name="confirmPassword" placeholder="Confirm Password">
+                
         <input type="submit">
     </form>
     <p><a href="/users/login">Have an account?</a></p>
